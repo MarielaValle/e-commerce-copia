@@ -1,35 +1,138 @@
 <%- include('partials/head', {title: 'Products'})%>
 <%- include('partials/header')%>
 
+<div class="contenedor">
 
+
+
+    <section class="A">
+
+        <span class="tituloFoto">Comprá cómodamente desde casa</span><br>
+
+
+        <label> <i class="fab fa-searchengin"></i></i></label>
+        <select class="select borderSearch">
+
+            <option value='selected desable hidden'>Buscar por categoría </option>
+            <!--desable hidden--->
+            <option value='tinto '>Tinto</option>
+            <option value='blanco '>Blanco</option>
+            <option value='malbec '>Malbec</option>
+            <option value='blend'>Blend</option>
+
+        </select>
+
+
+        <span class="encasa">#Yo me quedo en casa</span><br>
+        <img src="images/tienda-vino1.jpg" alt="foto comprando desde  casa"><br>
+        <br>
+        <br>
+        <img src="images/3cuotasr.png" alt="foto comprando desde  casa">
+
+    </section>
+
+
+
+    <div class="container" >
+
+        <div class="row" style="justify-content:center; align-items:center;" >
+
+            <div class="col-12">
+                <!------------------------------------------------------->
+                <div class="arriba">
+
+                    
+                        <div class="arribaB">
+                            <h1 class='titulo'> <i class="fas fa-wine-bottle"></i>¡Los tres vinos más recomendados! </h1>
+
+                            <p style=" font-style: italic;">"Catador se hace, no se nace"</p>
+
+
+                        </div>
+
+
+
+                        <section class="contacto">
+
+                            <span><i class="fab fa-whatsapp"></i></span><br><br>
+
+                            <span><i class="fas fa-share-alt"></i></span>
+
+                        </section>
+                </div>
+
+
+            </div>
+
+
+            <!--------------------------------------------------->
+
+           
+
+                <% productosRecomendados.forEach(productoRecomendado => { %>
+                    <div class="col-12 col-sm-6 col-lg-3" >
+                        <a href="/products/detail/<%= productoRecomendado.id %>">
+                            <section class="product-box">
+            
+                                <figure class="product-box_image">
+                                    <img src="/images/productos/<%= productoRecomendado.imagen%>" alt="imagen de producto">
+                                </figure>
+                                <article class="product-box_data">
+                                    <h2>$<%= productoRecomendado.precio %></h2>
+                                    <p><%= productoRecomendado.nombre %></p>
+                                    
+                                </article>
+                                <button type="button" class="btn btn-success">comprar <i class="fas fa-shopping-cart"></i></button>
+                            </section>
+                        </a>
+                    </div>
+                    <% }); %>
+
+
+
+
+           
+
+
+
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!---------------------------------------------
 <div class="container-fluid">
-    <div class="row" id="filasPHome" >
+    <div class="row" id="filasPHome">
         <div class="col-12">
-            <h2 class="products-title">Vinos recomendados</h2> 
+            <h2 class="products-title">Vinos recomendados</h2>
         </div>
         <% productosRecomendados.forEach(productoRecomendado => { %>
         <div class="col-12 col-sm-6 col-lg-3">
             <a href="/products/detail/<%= productoRecomendado.id %>">
-            <section class="product-box">
-                
-                 <figure class="product-box_image">
-                    <img src="/images/productos/<%= productoRecomendado.imagen%>" alt="imagen de producto">
-                  </figure>
-                 <article class="product-box_data">
-                    <h2>$<%= productoRecomendado.precio %></h2>
-                    <p><%= productoRecomendado.nombre %></p>
-                    <i class=" fa fa-cart-plus fa-2x"></i>
-                 </article>
-                    
-             </section>
+                <section class="product-box">
+
+                    <figure class="product-box_image">
+                        <img src="/images/productos/<%= productoRecomendado.imagen%>" alt="imagen de producto">
+                    </figure>
+                    <article class="product-box_data">
+                        <h2>$<%= productoRecomendado.precio %></h2>
+                        <p><%= productoRecomendado.nombre %></p>
+                        <i class=" fa fa-cart-plus fa-2x"></i>
+                    </article>
+
+                </section>
             </a>
         </div>
         <% }); %>
     </div>
-   
+
 </div>
 
-
+-->
 
 
 
@@ -38,8 +141,3 @@
 
 
 <%- include('partials/footer')%>
-
-
-
-
-
