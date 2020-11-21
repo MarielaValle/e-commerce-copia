@@ -2,7 +2,7 @@
 <%- include("partials/header")%>
 <!------------------------------------------------------------>
 
-<div class="row" id='registroC'>
+<div class="row" id='registroC' >
 
   <div class="col-12 col-md-4 text-center pt-5 pb-5">
 
@@ -24,7 +24,7 @@
 
     <!------------------mensajes de éxito-------------------------------->
     <% if (typeof data.mensaje != "undefined") { %>
-    <div class="alert alert-success" role="alert">
+    <div class="alert alert-danger" role="alert">
       <%= data.mensaje %>
     </div>
     <% } %>
@@ -105,7 +105,7 @@
 
     <div class="col-12 col-md-6 text-center  pt-5 " >
 
-      <h3 class="pb-3">Mi Informacion</h3>
+      <h3 class="pb-3">Mi Información</h3>
 
       <img style="width:30%" src="/img/avatar/<%= data.User.imagen%>">
 
@@ -122,7 +122,8 @@
         <p>Categoría:<%= data.User.categoria %></p>
 
 
-        <a href='/users/edit/<%=data.User.id%>' type="submit" class="btn btn-secondary">
+        <a href='/users/edit/<%=data.User.id%>' 
+          type="submit" class="btn btn-success"style="color:white" >
           Editar
         </a>
 
@@ -134,7 +135,8 @@
 
     <div class="col-12 col-md-8 text-center pt-5">
       <!---------------id='carritoComprar'--------------->
-      <a href='/users/delete/<%=data.User.id%>' type="submit" class="btn btn-secondary">
+      <a href='/users/delete/<%=data.User.id%>'
+         type="submit" class="btn btn-warning" style="color:white">
         Ir a página de eliminar perfil
       </a>
 
