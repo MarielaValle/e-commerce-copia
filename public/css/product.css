@@ -8,12 +8,12 @@
     margin-bottom: 50px;
     background-color: white;
     text-align: center;
-    box-shadow: -1px 5px 5px -1px #034001;
+    box-shadow: 0px 5px 15px -1px #034001;
   }
   
  .product-box_data {
       color:#730220 ;
-      font-size:1.1em
+      font-size: 0.8em;
    
    
   }
@@ -39,3 +39,14 @@ color:#034001
     color:black;
     text-decoration: none;
   }
+
+  .productsTitle{
+  font-family: 'Zilla Slab', serif;
+  color:#0D0D0D;
+  }
+
+  a:-webkit-any-link{
+
+    cursor:no-drop
+  }
+  

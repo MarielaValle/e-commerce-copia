@@ -34,7 +34,7 @@ window.addEventListener("load", function(){
     
     
     //------------------------
-    let menuLink = document.querySelectorAll("#menuLink a");
+    let menuLink = document.querySelectorAll("#menuLink i");
     
     console.log(menuLink)
     
@@ -43,10 +43,10 @@ window.addEventListener("load", function(){
     for (let x=0; x < menuLink.length; x ++){
         //menuLink.onmouseover=function(){
         
-        menuLink[x].addEventListener("click", function(){              
+        menuLink[x].addEventListener("mouseover", function(){              
             
-           
-                this.style.color= "#730220"
+                 this.style.fontSize="1.8em"
+               this.style.color= "#730220"
            
                 
                 //menuLink.onmouseover=function(){

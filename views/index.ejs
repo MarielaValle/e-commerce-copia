@@ -33,32 +33,32 @@
 
 
 
-    <div class="container" >
+    <div class="container">
 
-        <div class="row" style="justify-content:center; align-items:center;" >
+        <div class="row" style="justify-content:center; align-items:center;">
 
             <div class="col-12">
                 <!------------------------------------------------------->
                 <div class="arriba">
 
-                    
-                        <div class="arribaB">
-                            <h1 class='titulo'> <i class="fas fa-wine-bottle"></i>¡Los tres vinos más recomendados! </h1>
 
-                            <p style=" font-style: italic;">"Catador se hace, no se nace"</p>
+                    <div class="arribaB">
+                        <h1 class='titulo'> <i class="fas fa-wine-bottle"></i>¡Los tres vinos más recomendados! </h1>
 
-
-                        </div>
+                        <p style=" font-style: italic;">"Catador se hace, no se nace"</p>
 
 
+                    </div>
 
-                        <section class="contacto">
 
-                            <span><i class="fab fa-whatsapp"></i></span><br><br>
 
-                            <span><i class="fas fa-share-alt"></i></span>
+                    <section class="contacto">
 
-                        </section>
+                        <span><i class="fab fa-whatsapp"></i></span><br><br>
+
+                        <span><i class="fas fa-share-alt"></i></span>
+
+                    </section>
                 </div>
 
 
@@ -67,31 +67,32 @@
 
             <!--------------------------------------------------->
 
-           
-
-                <% productosRecomendados.forEach(productoRecomendado => { %>
-                    <div class="col-12 col-sm-6 col-lg-3" >
-                        <a href="/products/detail/<%= productoRecomendado.id %>">
-                            <section class="product-box">
-            
-                                <figure class="product-box_image">
-                                    <img src="/images/productos/<%= productoRecomendado.imagen%>" alt="imagen de producto">
-                                </figure>
-                                <article class="product-box_data">
-                                    <h2>$<%= productoRecomendado.precio %></h2>
-                                    <p><%= productoRecomendado.nombre %></p>
-                                    
-                                </article>
-                                <button type="button" class="btn btn-success">comprar <i class="fas fa-shopping-cart"></i></button>
-                            </section>
-                        </a>
-                    </div>
-                    <% }); %>
 
 
+            <% productosRecomendados.forEach(productoRecomendado => { %>
+            <div class="col-12 col-sm-6 col-lg-3">
+                <a href="/products/detail/<%= productoRecomendado.id %>">
+                    <section class="product-box">
+
+                        <figure class="product-box_image">
+                            <img src="/images/productos/<%= productoRecomendado.imagen%>" alt="imagen de producto">
+                        </figure>
+                        <article class="product-box_data">
+                            <h2>$<%= productoRecomendado.precio %></h2>
+                            <p><%= productoRecomendado.nombre %></p>
+
+                        </article>
+                        <button type="button" class="btn btn-success">comprar <i
+                                class="fas fa-shopping-cart"></i></button>
+                    </section>
+                </a>
+            </div>
+            <% }); %>
 
 
-           
+
+
+
 
 
 

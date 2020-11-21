@@ -1,0 +1,117 @@
+*{
+    box-sizing: border-box;
+    
+  }
+  /*------------ logomakr.com/3J8rQq ----------->*/
+  
+  
+  
+ 
+ 
+  
+  
+  /* ## Registro## */
+  
+         
+  
+  
+  .row{
+    margin:auto;
+    padding-top: 50px;
+    padding-bottom: 20px;
+     width: 80%;
+     display:flex;
+     justify-content: center;
+  }
+  
+      
+  #registro{
+     
+    padding-top:30px;
+     padding-bottom: 30px;
+     border:solid;
+     border-color:  #712B42;
+     border-radius: 5px;
+    /* background-color: #DAC9C1;*/
+     text-align: center;
+      
+     
+  }
+ 
+  
+  #registroC{
+
+    margin-top:100px
+  }
+  
+  
+  
+  .uno{
+  border:solid;
+  border-radius: 5px;
+  border-color: #712B42;
+  height:7vh;
+  width: 80%;
+  margin-bottom: 15px;
+  
+  
+  
+  }
+        
+         .btn-primary{
+  
+             background-color: #712B42 ;
+             border-color: #712B42 ;
+             
+         }
+         .btn-primary:hover{
+           background-color:  #0C0910 ;
+           border-color:  #0C0910;
+  
+         }
+  
+  
+  #avatar{
+
+    font-size: 0.75em;
+  }
+  
+      
+  
+
+   @media(max-width:991px){
+  
+    #avatar{
+
+      font-size: 0.65em;
+    }
+   
+   .row{
+
+    width:100%
+   }
+
+   .uno{
+
+    width: 100%;
+   }
+  }
+  
+  
+   
+  .form-control{
+
+
+    border-color: #034001;
+    
+  }
+   
+  @media(max-width:375px){
+    
+    .avatar{
+         position:relative;
+         right:15px;
+         font-size: 0.7em;
+       }
+  
+   }

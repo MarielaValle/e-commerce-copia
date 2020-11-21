@@ -129,6 +129,16 @@
   }
   
 
+  /*---------------Productos todos-----------------------*/
+
+ #colorF
+{
+
+  margin-top:200px;
+  text-align: center;
+}
+   
+
   @media(max-width: 705px){
   
   
@@ -174,8 +184,8 @@
       padding:5px;
       width: 100%;   
       border: solid;
-      border-color:rgba(54, 49, 64,0.4) ;
-      
+     /* border-color:rgba(54, 49, 64,0.4) ;*/
+      border-color: rgba(3, 64, 1,0.4);
     }
     
     .encasa{

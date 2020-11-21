@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "casi1506",
+    "password": null,
     "database": "database_winestore",
     "host": "127.0.0.1",
     "dialect": "mysql"

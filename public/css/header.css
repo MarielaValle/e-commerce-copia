@@ -93,7 +93,9 @@
     display:flex;
     justify-content: space-around;
     border-bottom: solid;
-    border-color:rgba(54, 49, 64,0.4);
+    /*border-color:rgba(54, 49, 64,0.4);
+    box-shadow: 5px 10px 10px -5px rgba(3, 64, 1,0.5);*/
+    border-color:rgba(3, 64, 1,0.4);
     background-color:whitesmoke;
   }
   
@@ -121,7 +123,8 @@
     
     background-color:whitesmoke ;
     border-bottom: solid;
-    border-color: rgba(54, 49, 64,0.4) ;
+   /* border-color: rgba(54, 49, 64,0.4) ;*/
+    border-color:rgba(3, 64, 1,0.4);
   }
   .menu2 i{
     
@@ -342,10 +345,6 @@
   
   
   
-  a:-webkit-any-link{
-
-    cursor:no-drop
-  }
   
   
   

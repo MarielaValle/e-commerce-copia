@@ -53,8 +53,9 @@
 
 
 
-      <form>
-        <input class="borderSearch" type="search" placeholder="Search">
+      <form action="/search" method="GET">
+        <input class="borderSearch" type="text" name="keywords" placeholder="Search">
+
         <button type="submit" class="searchButton">Search <i class="fas fa-search"></i>
         </button>
       </form>
@@ -74,19 +75,19 @@
         <li><i class="fas fa-user-alt"></i><a href="/users/profile"></i>Perfil</a></li>
 
 
-                    <% if ( user.categoria == 'admin' || user.categoria=='dueño') { %>
+        <% if ( user.categoria=="admin" || user.categoria=="dueño") { %>
 
-                        <li><i class="fas fa-chart-line"></i><a href="/dashboard"></i>Dashboard</a></li>
+        <li><i class="fas fa-chart-line"></i><a href="/dashboard">Dashboard</a></li>
 
-                     <% } %>
+        <% } %>
 
-        <li><i class="fas fa-home"></i><a href="/users/logout"></i>Salir</a></li>
+        <li><i class="fas fa-sign-out-alt"></i><a href="/users/logout"></i>Salir</a></li>
         <% } else {%>
 
 
         <!---------------------------------------------->
         <li><i class="fas fa-sign-in-alt"></i><a href="/users/login">Ingresar</a></li>
-        <li><i class="fas fa-registered"></i><a  href="/users/register">Registrarse</a></li>
+        <li><i class="fas fa-registered"></i><a href="/users/register">Registrarse</a></li>
 
         <% } %>
       </ul>
@@ -102,11 +103,30 @@
 
             <ul>
 
-              <li><a><i class="fas fa-home"></i>Home</a></li>
-              <li><a><i class="fab fa-product-hunt"></i>Productos</a></li>
-              <li><a><i class="fas fa-sign-in-alt"></i>Ingresar</a></li>
-              <li><a><i class="fas fa-registered"></i>Registrarse</a></li>
+              <li><a href="/"><i class="fas fa-home"></i>Home</a></li>
+              <li><a href="/products"><i class="fab fa-product-hunt"></i>Productos</a></li>
 
+              <!------------------------------------------------->
+              <% if (typeof user != 'undefined') { %>
+
+              <li><i class="fas fa-user-alt"></i><a href="/users/profile"></i>Perfil</a></li>
+
+
+              <% if ( user.categoria=="admin" || user.categoria=="dueño") { %>
+
+              <li><i class="fas fa-chart-line"></i><a href="/dashboard">Dashboard</a></li>
+
+              <% } %>
+
+              <li><i class="fas fa-sign-out-alt"></i><a href="/users/logout"></i>Salir</a></li>
+              <% } else {%>
+
+
+              <!---------------------------------------------->
+
+              <li><a href="/users/login"><i class="fas fa-sign-in-alt"></i>Ingresar</a></li>
+              <li><a href="/users/register"><i class="fas fa-registered"></i>Registrarse</a></li>
+              <% } %>
 
             </ul>
 
