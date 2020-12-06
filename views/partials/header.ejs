@@ -49,7 +49,7 @@
 
 
       <p class='bienvenido'><i class="fas fa-door-open"></i>¡Bienvenid@!</p>
-      <p class="shop">E-commerce<i class="fas fa-store"></i> </p>
+      <p class="shop">E-commerce <i class="fas fa-store"></i> </p>
 
 
 
@@ -73,7 +73,8 @@
         <% if (typeof user != 'undefined') { %>
 
         <li><i class="fas fa-user-alt"></i><a href="/users/profile"></i>Perfil</a></li>
-
+         <li><i class="fa fa-shopping-cart fa-1x"></i> <a href="/products/carrito/<%=user.id%>">Carrito </a>
+          </li>
 
         <% if ( user.categoria=="admin" || user.categoria=="dueño") { %>
 
@@ -109,16 +110,18 @@
               <!------------------------------------------------->
               <% if (typeof user != 'undefined') { %>
 
-              <li><i class="fas fa-user-alt"></i><a href="/users/profile"></i>Perfil</a></li>
-
+              <li><a href="/users/profile"></i><i class="fas fa-user-alt"></i> Perfil</a></li>
+              <li> <a href="/products/carrito/<%=user.id%>"><i class="fa fa-shopping-cart fa-1x"></i> Carrito </a>
+              </li>
 
               <% if ( user.categoria=="admin" || user.categoria=="dueño") { %>
 
-              <li><i class="fas fa-chart-line"></i><a href="/dashboard">Dashboard</a></li>
+              <li><a href="/dashboard"><i class="fas fa-chart-line"></i>
+                Dashboard</a></li>
 
               <% } %>
 
-              <li><i class="fas fa-sign-out-alt"></i><a href="/users/logout"></i>Salir</a></li>
+              <li><a href="/users/logout"></i><i class="fas fa-sign-out-alt"></i> Salir</a></li>
               <% } else {%>
 
 

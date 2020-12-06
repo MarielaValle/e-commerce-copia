@@ -140,7 +140,7 @@
     
     /* text-transform: uppercase;*/
     font-family:'Lobster',cursive;
-    font-size: 0.6em;
+    font-size: 0.75em;
     color:#0B0D0C;
   }
   /*------fin menu 2----------------*/
@@ -238,8 +238,8 @@
   
   .fa-store{
     
-    margin-left: 5px;
-    font-size: 1.2em;
+   
+   font-size:1.2em;
     /*color:#FFFF5C;*/
     /*color:#4ED94A;*/
     color:white
@@ -289,11 +289,19 @@
     
   }
   
-  
+  @media(max-width:460px){
+
+    .menu ul li i{
+
+      font-size:0.95em
+    }
+
+
+  }
   
   @media(max-width: 425px){
     
-    
+   
     
     
     .navbar{
@@ -304,9 +312,7 @@
     ul li{
       padding-left:0px
     }
-    .fa-store{
-      margin-left: 0px;
-    }
+    
     
     .borderSearch{
       

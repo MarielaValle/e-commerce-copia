@@ -41,7 +41,7 @@
   
   .contenedor {
   
-    background-image:url("/images/banner2.jpg"); 
+    background-image:url("/images/banner3.png"); 
   
    
     background-size: 40%;
@@ -107,11 +107,12 @@
   
   .tituloFoto{
     
-    margin-top: 50px;
+    margin-top: 120px;
     font-family:'Zilla Slab', serif;
     text-align: center;
     font-size: 1.3em;
     color:white;
+    font-weight: 1000;
     background-color: rgba(54, 49, 64,0.3) ;
     
     
