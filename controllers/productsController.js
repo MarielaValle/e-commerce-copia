@@ -22,41 +22,41 @@ let productsController = {
 	},
 */
 
-raiz: (req, res) => {
-	db.Producto.findAll()
-		.then(products => {
-			//products=productos
-			res.render("products", {products});
-		})
-		.catch(error => console.log(error));
-},
+	raiz: (req, res) => {
+		db.Producto.findAll()
+			.then(products => {
+				//products=productos
+				res.render("products", { products });
+			})
+			.catch(error => console.log(error));
+	},
 
 
 
 	detail: (req, res) => {
-     if (req.session.user){
-		   user = req.session.user
-	 } else{
+		if (req.session.user) {
+			user = req.session.user
+		} else {
 
-		user={
-		   categoria:null
-	   }
+			user = {
+				categoria: null
+			}
 
-	}
+		}
 		db.Producto.findByPk(req.params.id)
 
 			.then(function (producto) {
 
 
 
-				res.render('detail', { producto,user });
+				res.render('detail', { producto, user });
 
 			})
 			.catch(error => console.log(error));
-		
+
 	},
 
-	
+
 
 	formAlta: (req, res) => {
 
@@ -64,7 +64,7 @@ raiz: (req, res) => {
 			Formulario: 'NuevoProducto',
 		};
 		res.render('formProducto', { data: data });
-	
+
 	},
 
 
@@ -189,21 +189,21 @@ raiz: (req, res) => {
 				},
 				include: ['Producto', 'Usuario']
 
-			  })
+			})
 				.then(function (userCart) {
-                   console.log(userCart)
+					console.log(userCart)
 					return res.render('carrito', { userCart })
 				})
-				
-				
-				
-				
+
+
+
+
 				.catch(error => console.log(error));
 
-				}
-				
-				
-			else {
+		}
+
+
+		else {
 			let data = {
 				Formulario: "UsuarioRegistrado",
 				mensaje: 'Debe loguearse para comprar y/o registrarse antes'
@@ -229,9 +229,10 @@ raiz: (req, res) => {
 
 						id_usuario: user.id,
 						id_producto: producto.id,
-						nombre_vino:producto.nombre,
-						precio_venta: producto.precio
-						
+						nombre_vino: producto.nombre,
+						precio_venta: producto.precio,
+						imagen: producto.imagen
+
 					};
 
 					db.Carrito.create(Item)

@@ -1,0 +1,119 @@
+
+#carrito{
+
+    width: 100%;
+}
+
+#carritoT{
+
+   background-color: red;
+   
+    margin-top:150px;
+    margin-bottom:50px;
+}
+
+#carrito-left{
+    display:flex;
+    justify-content: space-between;
+    padding:30px;
+    background-color: green;
+    width:100%
+
+}
+
+
+/*-------------------------------------------*/
+.carritoTitulo{
+
+    margin-top:200px;
+
+    margin-left:40px
+    
+}
+
+.box-carrito{
+
+
+    display:flex;
+
+    margin:10px
+
+  
+    
+}
+
+
+.carrito-left{
+
+    margin:10px;
+    
+    padding:30px;
+   
+    width: 70%;
+
+    border:solid;
+
+    border-color:#034001;
+
+}
+
+.pedidoT{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding:5px;
+    background-color:rgb(3, 64, 1, 0.5);
+    color:white;
+}
+
+#pedido{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: solid;
+    border-bottom-color:rgb(3, 64, 1, 0.5);
+    margin-bottom: 30px;
+    margin-top:10px;
+    padding:5px;
+}
+
+.itemImage{
+
+    width: 40%;
+    
+}
+.nombreV{
+
+    font-size:0.7em;
+    text-align: center;
+    
+}
+
+.carrito-left span{
+
+    width:20%
+}
+
+.carrito-right{
+
+width:30%;
+margin:10px;
+padding:30px;
+border:solid;
+border-color:#034001;
+text-align: center;
+
+}
+
+.resumenP{
+
+    margin:20px;
+    padding:30px;
+    text-align: right;
+    border:solid;
+    border-color:#034001;
+}
