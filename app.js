@@ -6,12 +6,15 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 
 var methodOverride = require('method-override');
-var session = require('express-session')
+var session = require('express-session');
+
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
-var apiDashboardRouter=require('./routes/apiDashboard');
+var apiDashboardRouter = require('./routes/apiDashboard');
+var carritoRouter = require ('./routes/carrito');
 
 
 var app = express();
@@ -39,7 +42,8 @@ app.use(session( { secret: 'grupo4', resave: true, saveUninitialized: true}));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
-app.use('/dashboard',apiDashboardRouter)
+app.use('/dashboard',apiDashboardRouter);
+app.use('/carrito',carritoRouter)
 
 
 

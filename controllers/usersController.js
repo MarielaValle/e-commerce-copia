@@ -38,7 +38,7 @@ let usersController = {
                     if (validación == true) {
 
                         req.session.user = usuario;
-                        user = req.session.user
+                       user = req.session.user
 
                         res.cookie('userCookie', user.id, { maxAge: 70000 * 120 })
                         res.redirect("/users/profile");

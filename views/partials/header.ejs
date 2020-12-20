@@ -73,7 +73,7 @@
         <% if (typeof user != 'undefined') { %>
 
         <li><i class="fas fa-user-alt"></i><a href="/users/profile"></i>Perfil</a></li>
-         <li><i class="fa fa-shopping-cart fa-1x"></i> <a href="/products/carrito/<%=user.id%>">Carrito </a>
+         <li><i class="fa fa-shopping-cart fa-1x"></i> <a href="/carrito">Carrito </a>
           </li>
 
         <% if ( user.categoria=="admin" || user.categoria=="dueño") { %>
@@ -111,7 +111,7 @@
               <% if (typeof user != 'undefined') { %>
 
               <li><a href="/users/profile"></i><i class="fas fa-user-alt"></i> Perfil</a></li>
-              <li> <a href="/products/carrito/<%=user.id%>"><i class="fa fa-shopping-cart fa-1x"></i> Carrito </a>
+              <li> <a href="/carrito" class="fa fa-shopping-cart fa-1x"></i> Carrito </a>
               </li>
 
               <% if ( user.categoria=="admin" || user.categoria=="dueño") { %>
