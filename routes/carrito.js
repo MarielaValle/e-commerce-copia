@@ -13,6 +13,8 @@ router.get('/',loggedUser, carritoController.raiz);
 
 router.post('/:id', loggedUser,carritoController.carritoAdd);
 
+router.put('/add/:id', loggedUser, carritoController.sumItem);
+
 router.delete('/delete/:id', loggedUser,carritoController.itemDelete);
 
 

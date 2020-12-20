@@ -18,7 +18,7 @@
             
             <span>PRODUCTO </span>
             <span>PRECIO </span>
-            <span>CANTIDAD</span>
+            <span>AGREGAR</span>
             <span>SUBTOTAL</span>
             <span>ELIMINAR</span>
             
@@ -31,7 +31,8 @@
                 <span class="nombreV">
                     <img class="itemImage" src="/images/productos/<%= item.imagen %>" alt="imagen de producto">
                     <br>
-                    <%= item.nombre_vino %>
+                    <%= item.nombre_vino %> <br>
+                   
                 </span>
                 
                 
@@ -43,15 +44,21 @@
                 
                 <div class="cart-item_quantity cantidad">
                     
-                    <form class="cart-item_quantity_select" action="/cart/add/<%= item.id %>?_method=PUT" method="POST">
-                        <input class="form-control form-control-sm" type="number" name="quantity" value="1" max="" min="1" >
-                        <button class="btn btn-sm btn-outline-info" type="submit">Aplicar</button>
+                    <form class="cart-item_quantity_select" action="/carrito/add/<%= item.id %>?_method=PUT" method="POST">
+                        <input class="form-control form-control-sm" type="number" name="cantidad"  max="10" min="1" value='1' >
+                        <button class="btn btn-sm btn-outline-info" type="submit">Aplicar</button> <br>
+                        cantidad : <%= item.cantidad %>
                     </form>
                     
                 </div>
                 
                 
-                <span>Subtotal</span>
+                <span>
+                  
+                    
+                   
+
+                </span>
                 
                 <!------------------------------------------------>
                 

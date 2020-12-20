@@ -35,6 +35,10 @@ module.exports = (sequelize, dataTypes) => {
       imagen:{
 
          type:dataTypes.STRING(100)
+      },
+      cantidad: {
+
+         type: dataTypes.INTEGER.UNSIGNED
       }
      
 

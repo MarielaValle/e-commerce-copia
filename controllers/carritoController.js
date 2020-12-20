@@ -101,6 +101,24 @@ itemDelete: (req, res) => {
         return res.redirect('/carrito')
 
     
+},
+sumItem: (req,res) =>{
+
+   
+    db.Carrito.update({
+
+   cantidad:  req.body.cantidad
+
+    },{
+    where:
+    { id : req.params.id}
+    
+    })
+    
+    
+    .catch(error => console.log(error));
+
+    return res.redirect('/carrito')
 }
 
 
