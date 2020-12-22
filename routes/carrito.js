@@ -6,16 +6,16 @@ const loggedUser = require("../middleware/loggedUser");
 const carritoController = require('../controllers/carritoController');
 /* GET home page. */
 
-router.get('/',loggedUser, carritoController.raiz);
+router.get('/', loggedUser, carritoController.raiz);
 
 /***CARRITO***/
 
 
-router.post('/:id', loggedUser,carritoController.carritoAdd);
+router.post('/:id', loggedUser, carritoController.carritoAdd);
 
 router.put('/add/:id', loggedUser, carritoController.sumItem);
 
-router.delete('/delete/:id', loggedUser,carritoController.itemDelete);
+router.delete('/delete/:id', loggedUser, carritoController.itemDelete);
 
 
 

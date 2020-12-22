@@ -1,100 +1,111 @@
 <%- include("partials/head")%>
-<%- include("partials/header")%>
-<!------------------------------------------------------------>
+    <%- include("partials/header")%>
+        <!------------------------------------------------------------>
 
-<div class="carritoTitulo">
-    <h3>Carrito <i class="fas fa-luggage-cart"></i> </h3>
-</div>
-
-<!------------------------Pedifacil------------------------------------->
-
-
-<div class="box-carrito">
-    
-    
-    <div class="carrito-left">
-        
-        <div id="pedidoT">
-            
-            <span>PRODUCTO </span>
-            <span>PRECIO </span>
-            <span>AGREGAR</span>
-            <span>SUBTOTAL</span>
-            <span>ELIMINAR</span>
-            
+        <div class="carritoTitulo">
+            <h3>Carrito <i class="fas fa-luggage-cart"></i> </h3>
         </div>
-        
-        <% userCart.forEach(item=> { %>
-            <div id="pedido">
-                
-                
-                <span class="nombreV">
-                    <img class="itemImage" src="/images/productos/<%= item.imagen %>" alt="imagen de producto">
-                    <br>
-                    <%= item.nombre_vino %> <br>
-                   
-                </span>
-                
-                
-                <span style="margin-left:px">$ <%= item.precio_venta %></span>
-                
-                
-                
-                <!---------------------------------------->
-                
-                <div class="cart-item_quantity cantidad">
-                    
-                    <form class="cart-item_quantity_select" action="/carrito/add/<%= item.id %>?_method=PUT" method="POST">
-                        <input class="form-control form-control-sm" type="number" name="cantidad"  max="10" min="1" value='1' >
-                        <button class="btn btn-sm btn-outline-info" type="submit">Aplicar</button> <br>
-                        cantidad : <%= item.cantidad %>
-                    </form>
-                    
+
+        <!------------------------Pedifacil------------------------------------->
+
+
+        <div class="box-carrito">
+
+
+            <div class="carrito-left">
+
+                <div id="pedidoT">
+
+                    <span>PRODUCTO </span>
+                    <span>PRECIO </span>
+                    <span>AGREGAR</span>
+                    <span>SUBTOTAL</span>
+                    <span>ELIMINAR</span>
+
                 </div>
-                
-                
-                <span>
-                  
-                    
-                   
 
-                </span>
-                
-                <!------------------------------------------------>
-                
-                
-                
-                <form class="cart-item_delete" action="/carrito/delete/<%=item.id %>?_method=DELETE" method="POST"><button type="submit"><i class="fas fa-trash-alt"></i></button></form>
-                
+                <% userCart.forEach(item=> { %>
+                    <div id="pedido">
+
+
+                        <span class="nombreV">
+                            <img class="itemImage" src="/images/productos/<%= item.imagen %>" alt="imagen de producto">
+                            <br>
+                            <%= item.nombre_vino %> <br>
+
+                        </span>
+
+
+                        <span style="margin-left:px">$ <%= item.precio_venta %></span>
+
+
+
+                        <!---------------------------------------->
+
+                        <div class="cart-item_quantity cantidad">
+
+                            <form class="cart-item_quantity_select" action="/carrito/add/<%= item.id %>?_method=PUT"
+                                method="POST">
+                                <input class="form-control form-control-sm" type="number" name="cantidad" max="100"
+                                    min="1" value='1'>
+                                <button class="btn btn-sm btn-outline-info" type="submit">Aplicar</button> <br>
+                                cantidad : <%= item.cantidad %>
+                            </form>
+
+                            <% if(item.stock - item.cantidad <=0){%>
+                                <span style='color:red'>'no hay stock' <br>
+                                    stock: <%= item.stock %>
+                                
+                                </span>
+
+                                <%}%>
+
+                        </div>
+
+
+                        <span>
+
+
+                        <%=  item.precio_venta * item.cantidad %>
+
+                        </span>
+
+                        <!------------------------------------------------>
+
+
+
+                        <form class="cart-item_delete" action="/carrito/delete/<%=item.id %>?_method=DELETE"
+                            method="POST"><button type="submit"><i class="fas fa-trash-alt"></i></button></form>
+
+                    </div>
+                    <%})%>
+
             </div>
-            <%})%>
-            
+
+            <div class="carrito-right">
+
+                <h3>Resumen de pedido</h3>
+            </div>
+
+
+
+
+            <!-----------------fin row-->
         </div>
-        
-        <div class="carrito-right">
-            
-            <h3>Resumen de pedido</h3>
+
+
+
+
+        <div class="resumenP">
+
+            <h3>Total <i class="fas fa-shopping-bag"></i> <i class="fas fa-money-bill-alt"></i> </h3>
+
+
+
         </div>
-        
-        
-        
-        
-        <!-----------------fin row-->
-    </div>
-    
-    
-    
-    
-    <div class="resumenP">
-        
-        <h3>Total  <i class="fas fa-shopping-bag"></i> <i class="fas fa-money-bill-alt"></i> </h3>
-        
-        
-        
-    </div>
-    
-    
-    
-    
-    <!------------------------------------------------------------>
-    <%- include("partials/footer")%>
+
+
+
+
+        <!------------------------------------------------------------>
+        <%- include("partials/footer")%>

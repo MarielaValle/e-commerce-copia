@@ -39,6 +39,10 @@ module.exports = (sequelize, dataTypes) => {
       cantidad: {
 
          type: dataTypes.INTEGER.UNSIGNED
+      },
+      stock:{
+         type: dataTypes.INTEGER.UNSIGNED
+
       }
      
 
