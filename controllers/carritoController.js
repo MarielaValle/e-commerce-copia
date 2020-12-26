@@ -21,16 +21,36 @@ let carritoController = {
                 include: ['Producto', 'Usuario']
                 
             })
+
+            
             .then(function (userCart) {
-                console.log(userCart)
-                return res.render('carrito', { userCart })
-            })
-            
-            
-            
-            
-            .catch(error => console.log(error));
-            
+               /*-------------------------*/
+               let total= 0
+               let cantidadProductos=0
+               userCart.forEach(function(elem){
+               let productoCarrito=[];
+             
+               productoCarrito.push(elem)  
+               
+              
+               productoCarrito.map(function(item){
+                
+                 
+                 let subtotal= (item.cantidad*item.precio_venta)
+                   
+                 total= total +subtotal
+                 
+                 let subtotalProductos = item.cantidad  
+                 cantidadProductos=cantidadProductos + subtotalProductos                 
+                 })
+             
+               
+                 })
+
+
+            return res.render('carrito', { userCart , total, cantidadProductos})
+        })
+        .catch(error => console.log(error)) 
         }
         
         
@@ -72,6 +92,15 @@ let carritoController = {
                 
                 db.Carrito.create(Item)
                 .then(function (Item) {
+
+
+
+                    /*--------------------------------*/
+
+                  
+
+
+                    /*-----------------------------------*/
                     
                     return res.redirect('/carrito')
                     
@@ -109,6 +138,8 @@ let carritoController = {
             return res.redirect('/carrito')
         
     },
+
+    
 
     itemDelete: (req, res) => {
         

@@ -129,14 +129,25 @@
     border:solid;
     border-color:#034001;
     text-align: center;
+    font-size: 1.2em
     
+}
+
+.carrito-right button{
+
+    font-size: 1em
 }
 
 .resumenP{
     
     margin:20px;
     padding:30px;
-    text-align: right;
+    text-align: center;
     border:solid;
     border-color:#034001;
+    
+}
+
+.resumenP button{
+    font-size: 1.5em;
 }
