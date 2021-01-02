@@ -15,6 +15,7 @@ var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
 var apiDashboardRouter = require('./routes/apiDashboard');
 var carritoRouter = require ('./routes/carrito');
+var pagarRouter = require ('./routes/pagar')
 
 
 var app = express();
@@ -43,7 +44,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
 app.use('/dashboard',apiDashboardRouter);
-app.use('/carrito',carritoRouter)
+app.use('/carrito',carritoRouter);
+app.use('/pagar',pagarRouter);
 
 
 

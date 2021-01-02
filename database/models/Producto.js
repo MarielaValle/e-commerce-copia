@@ -73,9 +73,7 @@ module.exports = (sequelize, dataTypes) =>{
       }
       const Producto = sequelize.define(alias,cols,config);
 
-     
-     
-  
+      
       return Producto;
-  
+      
   }

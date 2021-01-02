@@ -57,6 +57,7 @@ module.exports = (sequelize, dataTypes) => {
    Carrito.associate = (models) => {
       Carrito.belongsTo(models.Producto, { foreignKey: 'id_producto', as: 'Producto' });
       Carrito.belongsTo(models.Usuario, { foreignKey: 'id_usuario', as: 'Usuario' });
+      
    }
 
    return Carrito;

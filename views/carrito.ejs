@@ -24,6 +24,8 @@
 
                 </div>
 
+
+
                 <% userCart.forEach(item=> { %>
                     <div id="pedido">
 
@@ -78,23 +80,37 @@
                             method="POST"><button type="submit"><i class="fas fa-trash-alt"></i></button></form>
 
                     </div>
-
+                   
                     <%})%>
             </div>
 
             <div class="carrito-right">
 
+
+
                 <h3>Resumen de pedido</h3>
 
-               
-                  <p>Cantidad de productos: <%= cantidadProductos %></p> 
-                  <p> Precio total = $ <%= total%></p>   
-                  
-                  <button type="button" class="btn btn-success">comprar <i class="fas fa-money-bill-alt"></i></button>
-                          
-             
-                        
 
+                <p>Cantidad de productos: <%= cantidadProductos %>
+                </p>
+                <p> Precio total = $ <%= total%>
+                </p>
+
+              
+                <form action="/pagar" method="POST">
+                 
+                <% userCart.forEach(item=> { %>
+                    <input type="hidden" id="" name="userCart" value="<%=item.id_producto%>">
+                     <input type="hidden" id=""  name="cantidadProductos" value="<%= cantidadProductos %>">
+                     <input type="hidden" id="" name= "total" value=" <%= total%>"     >
+                     <input type="hidden" id="" name= "itemCantidad" value=" <%= item.cantidad%>"     >
+
+                <% }) %>
+                    <button type="submit" class="btn btn-success">comprar <i class="fas fa-money-bill-alt"></i></button>
+
+                </form>
+
+            
 
 
 
@@ -113,9 +129,10 @@
 
         <div class="resumenP">
 
-              
 
-          <a href="/products/" > <button type="button" class="btn btn-success">Agregar más productos <i class="fas fa-shopping-bag"></i></button></a> 
+
+            <a href="/products/"> <button type="button" class="btn btn-success">Agregar más productos <i
+                        class="fas fa-shopping-bag"></i></button></a>
 
         </div>
 
