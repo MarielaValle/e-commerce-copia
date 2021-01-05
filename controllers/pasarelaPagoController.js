@@ -8,7 +8,7 @@ const { userInfo } = require('os');
 const mercadopago = require("mercadopago");
 // Configuramos SDK con nuestro access token
 mercadopago.configure({
-  access_token:TEST-8864673059964335-122713-e1402151321120e647bfbc567e9a0a28-118667643
+  access_token: 'TEST-6623451607855904-111502-83c610c2165674e9bba665cfb4aa6b0c-672708410'
 });
 
 
@@ -21,24 +21,24 @@ let pasarelaPagoController = {
 
     let carrito = req.body.userCart;
     let itemCantidad = req.body.itemCantidad;
-    let cantidadProductos=req.body.cantidadProductos;
-    let sumaTotal=req.body.total; 
-   
+    let cantidadProductos = req.body.cantidadProductos;
+    let sumaTotal = req.body.total;
+
 
     let orden = carrito.join('-');
     let itemC = itemCantidad.join('-');
-  
+
 
     db.Order.create({
-        
-      numeroOrden:orden,
-      codigoC:itemC,
-      id_usuario:user.id,
-      cantidadProductos:cantidadProductos,
-      total:sumaTotal,
+
+      numeroOrden: orden,
+      codigoC: itemC,
+      id_usuario: user.id,
+      cantidadProductos: cantidadProductos,
+      total: sumaTotal,
       date: new Date()
-      
-  
+
+
     }).catch(error => console.log(error));
 
 
@@ -47,32 +47,34 @@ let pasarelaPagoController = {
 
       where: {
         id_usuario: user.id
-        },
-        
-       
-    
-    }).then(function(elemento){
+      },
 
 
-     let compra=[];
-    
-      
-   
-      elemento.map(function(elem){
+
+    }).then(function (elemento) {
+
+
+      let compra = [];
+
+
+
+      elemento.map(function (elem) {
         let item;
-       item=
-      {
-        title: elem.nombre_vino,
-        quantity: elem.cantidad,
-        currency_id: 'ARS',
-        unit_price: elem.precio_venta
-      }
-      compra.push(item)
-    
- 
+        item =
+        {
+          title: elem.nombre_vino,
+          quantity: elem.cantidad,
+          currency_id: 'ARS',
+          unit_price: elem.precio_venta
+        }
+        compra.push(item)
+
+
       })
 
-      preference = {
+
+      /*  const pagar = async (req, res) => {*/
+      let preference = {
         items: compra,
         payment_methods: {
           excluded_payment_types: [
@@ -91,65 +93,48 @@ let pasarelaPagoController = {
           failure: "http://localhost:3000/pago_rechazado/",
           success: "http://localhost:3000/pago_exitoso/",
         },
-        
-        
-      
+
       }
-    res.send(preference)
-   
-    mercadopago.preferences.create(preference)
-    
-}).catch(error => console.log(error));
+      mercadopago.preferences.create(preference)
+        .then(function (response) {
+
+          console.log(response.body);
+
+          res.redirect(response.body.init_point);
+          // Este valor reemplazará el string "<%= global.id %>" en tu HTML
+         // global.id = response.body.id;
+         // res.send(preference)
+        }).catch(function (error) {
+          console.log(error);
+        });
 
 
 
 
+
+
+
+     })
 
   }
+
+  /*  const preferenciaCreada = await mercadopago.preferences.create(preference);
+          return res.redirect(preferenciaCreada.response.init_point);
+        
+          return res.json(mercadoPagoPreferency);
+
+        }
+       })
+      
+       */
+      
+  
 }
 module.exports = pasarelaPagoController;
 
-/*var preference = {
-  items: [
-    {
-      title: 'nombre_vino',
-      quantity: elem.cantidad,
-      currency_id: 'ARS',
-      unit_price: elem.precio_venta
-    }
-  ]
-};
-res.send(preference)
-mercadopago.preferences.create(preference)
 
-})
 
-     */
 
-/* mercadopago.preferences.create(preference)
-title: item.nombre_vino,
-currency_id: "ARS",
-unit_price: item.precio_venta,
-quantity: item.cantidad,
-user_id: item.id_usuario,
-producto_id: item.id_producto,
-*/
 
-/*
-db.Producto.findAll({
 
-  where: {
-    id: carrito.map(function(item){
-    return item
-    })
-  
-}
-}).then(function(resultado){
 
-  productoComprado=resultado
-  res.send(productoComprado)
-})
-
-.catch(error => console.log(error));
-
-*/

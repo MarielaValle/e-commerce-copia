@@ -36,6 +36,18 @@ let indexController = {
       }
     });
     res.render("results", { results, search: req.query.keywords });
+  },
+
+  rechazado:(req, res) => {
+
+    res.render("pago_rechazado")
+
+  },
+
+  exitoso:(req, res) => {
+
+    res.render("pago_exitoso")
+
   }
 
 

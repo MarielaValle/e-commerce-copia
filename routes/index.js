@@ -14,6 +14,10 @@ router.get('/dashboard/', indexController.dashboard);
 
 router.get('/search/', indexController.search);
 
+router.get('/pago_rechazado', indexController.rechazado);
+
+router.get('/pago_exitoso', indexController.exitoso);
+
 
 
 
