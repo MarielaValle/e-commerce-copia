@@ -73,7 +73,7 @@ let productsController = {
 		db.Producto.create({
 			nombre: req.body.nombre,
 			color: req.body.color,
-			categoría: req.body.categorí1a,
+			categoria: req.body.categoria,
 			variedad: req.body.variedad,
 			precio: parseFloat(req.body.precio),
 			descuento: parseFloat(req.body.descuento),

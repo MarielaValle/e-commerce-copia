@@ -2,7 +2,7 @@ var db = require('../database/models/index.js');
 const { Sequelize } = require('../database/models/index.js');
 const { userInfo } = require('os');
 
-
+const moment = require ('moment')
 
 // Importamos SDK
 const mercadopago = require("mercadopago");
@@ -28,6 +28,23 @@ let pasarelaPagoController = {
     let orden = carrito.join('-');
     let itemC = itemCantidad.join('-');
 
+    /*let fechaActual= new Date();
+    console.log(fechaActual)
+    let year=fechaActual.getFullYear();
+    let month=fechaActual.getMonth();
+    let day=fechaActual.getDate();
+    let orderDate= new Date(year,month,day)
+    console.log(orderDate)
+  */
+
+ // const today= moment('YYYY-MM-DD');
+ // moment().format()
+
+ let day = moment().day()
+ let month= moment().month()
+ let year=moment().year()
+ let today= year-month-day
+ 
 
     db.Order.create({
 
@@ -36,7 +53,7 @@ let pasarelaPagoController = {
       id_usuario: user.id,
       cantidadProductos: cantidadProductos,
       total: sumaTotal,
-      date: new Date()
+      date: today
 
 
     }).catch(error => console.log(error));
@@ -90,8 +107,8 @@ let pasarelaPagoController = {
         binary_mode: true,
         auto_return: "all",
         back_urls: {
-          failure: "http://localhost:3000/pago_rechazado/",
-          success: "http://localhost:3000/pago_exitoso/",
+          failure: "http://localhost:3030/pago_rechazado/",
+          success: "http://localhost:3030/pago_exitoso/",
         },
 
       }
